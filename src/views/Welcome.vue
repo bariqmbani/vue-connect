@@ -1,27 +1,21 @@
 <template>
-  <div class="wrapper">
-    <Navbar />
-  </div>
+  <Navbar />
   <div class="container">
     <h2>Hi, Muhammad Fariz</h2>
     <h5 style="text-align: center">
       Welcome back, let's meet, study, or hangout using Connect App
     </h5>
     <div class="button-connect">
-      <button
-        style="width: auto"
-        onclick="document.location='Join Conference.html'"
-        type="submit"
-      >
-        <i class="fas fa-video"></i> Join Meeting
-      </button>
-      <button
-        style="width: auto"
-        onclick="document.location='Join webinar.html'"
-        type="submit"
-      >
-        <i class="fas fa-broadcast-tower"></i> Join webinar
-      </button>
+      <router-link to="/conference/join">
+        <button style="width: auto" type="submit">
+          <i class="fas fa-video"></i> Join Meeting
+        </button>
+      </router-link>
+      <router-link to="/webinar/join">
+        <button style="width: auto" type="submit">
+          <i class="fas fa-broadcast-tower"></i> Join webinar
+        </button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -34,3 +28,9 @@ export default {
   components: { Navbar },
 };
 </script>
+
+<style>
+.button-connect button {
+  margin: 10px;
+}
+</style>
