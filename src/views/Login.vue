@@ -8,12 +8,18 @@
         <br />
         <i class="fa fa-lock icon"></i>
         <input type="password" placeholder="Password" name="psw" />
-        <span class="psw"> <a href="ForgotPass.html">Forgot password?</a></span>
+        <span class="psw">
+          <router-link to="/forgot-password">
+            <a>Forgot password?</a>
+          </router-link>
+        </span>
       </div>
 
       <button type="submit">Login</button>
       <span class="rgs">
-        Don't have an account? <a href="Register.html"> Register now?</a>
+        <router-link to="/register">
+          Don't have an account? <a>Register now?</a>
+        </router-link>
       </span>
     </div>
   </form>

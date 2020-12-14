@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store'
 import Welcome from '../views/Welcome.vue'
 import Login from '../views/Login.vue'
+import ForgotPassword from '../views/ForgotPassword.vue'
+import Register from '../views/Register.vue'
 import Profile from '../views/Profile.vue'
 import ProfileEdit from '../views/ProfileEdit.vue'
 import JoinConference from '../views/JoinConference.vue'
@@ -14,6 +16,16 @@ const routes = [
 		path: '/login',
 		name: 'Login',
 		component: Login,
+	},
+	{
+		path: '/forgot-password',
+		name: 'ForgotPassword',
+		component: ForgotPassword,
+	},
+	{
+		path: '/register',
+		name: 'Register',
+		component: Register,
 	},
 	{
 		path: '/',
