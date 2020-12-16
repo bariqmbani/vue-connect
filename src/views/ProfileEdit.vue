@@ -7,7 +7,9 @@
           <img src="../assets/profile2.png" alt="profile" />
           <div><input type="file" id="myfile" name="myfile" /><br /><br /></div>
         </div>
-        <button onclick="document.location='profile.html'">Update</button>
+        <router-link to="/profile">
+          <button>Update</button>
+        </router-link>
       </div>
       <div class="box-profile">
         <h2>Update User Info</h2>
@@ -51,7 +53,9 @@
           name="email"
           required
         />
-        <button onclick="document.location='profile.html'">Update</button>
+        <router-link to="/profile">
+          <button>Update</button>
+        </router-link>
       </div>
 
       <div class="box-profile" style="float: right">
@@ -65,7 +69,9 @@
         <label for="topic"><b>Confirm Password</b></label
         ><br />
         <input type="text" placeholder="" name="confrimpass" required />
-        <button onclick="document.location='profile.html'">Update</button>
+        <router-link to="/profile">
+          <button>Update</button>
+        </router-link>
       </div>
     </div>
   </div>

@@ -4,7 +4,7 @@
     <div class="container">
       <h2>Join Webinar</h2>
       <input type="text" placeholder="insert code" name="jcon" />
-      <router-link to="/conference/join/setting">
+      <router-link to="/webinar/join/setting">
         <button submit>Join Room</button>
       </router-link>
     </div>

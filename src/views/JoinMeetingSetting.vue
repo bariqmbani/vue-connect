@@ -9,7 +9,8 @@
       </div>
       <div class="col">
         <div class="ready">
-          <h3>Meeting Ready</h3>
+          <h3 v-if="isMeeting">Meeting Ready</h3>
+          <h3 v-if="isWebinar">Webinar Ready</h3>
           <button
             style="border-radius: 40px; width: auto; padding: 16px 40px"
             @click="click"
@@ -24,15 +25,23 @@
 <script>
 import Navbar from "../components/Navbar";
 import Camera from "../components/Camera";
+import { useRouter } from "vue-router";
+import { reactive } from "vue";
 
 export default {
   name: "JoinMeetingSetting",
   components: { Navbar, Camera },
   setup() {
-    function click() {
-      console.log("ests");
-    }
-    return { click };
+    const router = useRouter();
+
+    const state = reactive({
+      currentRoute: router.currentRoute,
+    });
+
+    const isWebinar = state.currentRoute.fullPath.includes("/webinar");
+    const isMeeting = state.currentRoute.fullPath.includes("/conference");
+
+    return { isWebinar, isMeeting };
   },
 };
 </script>
