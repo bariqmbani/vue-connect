@@ -3,7 +3,7 @@
 
   <form action="" method="post" @submit.prevent>
     <div class="container">
-      <h2>Create Meeting</h2>
+      <h2>Create Webinar</h2>
       <div class="form-group">
         <label for="topic"><b>Topic</b></label
         ><br />

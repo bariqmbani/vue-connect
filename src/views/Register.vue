@@ -1,5 +1,4 @@
 <template>
-  <Navbar />
   <form action="" method="post">
     <div class="register">
       <h2>Register</h2>
@@ -82,10 +81,7 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar";
-
 export default {
-  name: "Welcome",
-  components: { Navbar },
+  name: "Register",
 };
 </script>

@@ -10,6 +10,8 @@ import JoinConference from '../views/JoinConference.vue'
 import JoinMeetingSetting from '../views/JoinMeetingSetting.vue'
 import ListMeeting from '../views/ListMeeting.vue'
 import JoinWebinar from '../views/JoinWebinar.vue'
+import CreateMeeting from '../views/CreateMeeting.vue'
+import CreateWebinar from '../views/CreateWebinar.vue'
 
 const routes = [
 	{
@@ -60,6 +62,14 @@ const routes = [
 		},
 	},
 	{
+		path: '/conference/create',
+		name: 'CreateMeeting',
+		component: CreateMeeting,
+		meta: {
+			auth: true,
+		},
+	},
+	{
 		path: '/conference/join/setting',
 		name: 'JoinMeetingSetting',
 		component: JoinMeetingSetting,
@@ -79,6 +89,14 @@ const routes = [
 		path: '/webinar/join',
 		name: 'JoinWebinar',
 		component: JoinWebinar,
+		meta: {
+			auth: true,
+		},
+	},
+	{
+		path: '/webinar/create',
+		name: 'CreateWebinar',
+		component: CreateWebinar,
 		meta: {
 			auth: true,
 		},

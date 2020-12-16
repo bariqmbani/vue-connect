@@ -1,5 +1,4 @@
 <template>
-  <Navbar />
   <form action="" method="post">
     <div class="container">
       <h2>Reset my password</h2>
@@ -17,10 +16,7 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar";
-
 export default {
-  name: "Welcome",
-  components: { Navbar },
+  name: "ForgotPassword",
 };
 </script>

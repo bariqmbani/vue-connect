@@ -15,9 +15,7 @@
             <router-link to="/conference/join">Join Meeting</router-link>
           </li>
           <li v-if="isConference || isProfile">
-            <router-link to="/conference/join/setting"
-              >Create Meeting</router-link
-            >
+            <router-link to="/conference/create">Create Meeting</router-link>
           </li>
           <li v-if="isConference || isProfile">
             <router-link to="/conference/list">Meeting List</router-link>
@@ -26,7 +24,7 @@
             <router-link to="/webinar/join">Join Webinar</router-link>
           </li>
           <li v-if="isWebinar">
-            <router-link to="/webinar/join/setting">Create Webinar</router-link>
+            <router-link to="/webinar/create">Create Webinar</router-link>
           </li>
           <li v-if="isWebinar">
             <router-link to="/webinar/list">Webinar List</router-link>
