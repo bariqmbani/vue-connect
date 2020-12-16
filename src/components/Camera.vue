@@ -12,7 +12,7 @@
   </div>
 </template>
 <script>
-import { onBeforeMount, reactive } from "vue";
+import { onBeforeMount, onUnmounted, reactive } from "vue";
 export default {
   name: "Camera",
   methods: {},
@@ -44,16 +44,20 @@ export default {
       });
     }
 
-    onBeforeMount(() => {
-      openCamera();
-    });
-
     function handleCamera() {
       if (state.startVideo || !state.stream) {
         openCamera();
       } else closeCamera(state.stream);
       state.startVideo = !state.startVideo;
     }
+
+    onBeforeMount(() => {
+      openCamera();
+    });
+
+    onUnmounted(() => {
+      if (state.stream) closeCamera(state.stream);
+    });
 
     return {
       state,

@@ -1,7 +1,8 @@
 <template>
   <Navbar />
   <div class="list">
-    <p>List Meeting</p>
+    <p v-if="isMeeting">List Meeting</p>
+    <p v-if="isWebinar">List Webinar</p>
     <table>
       <tr>
         <th>No.</th>
@@ -38,7 +39,8 @@
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close" @click="handleCloseClick">&times;</span>
-      <h2>Meeting Detail</h2>
+      <h2 v-if="isMeeting">Meeting Detail</h2>
+      <h2 v-if="isWebinar">Webinar Detail</h2>
       <table>
         <tr>
           <td>Join Key :</td>
@@ -71,14 +73,18 @@
 <script>
 import { reactive } from "vue";
 import Navbar from "../components/Navbar";
+import { useRouter } from "vue-router";
 
 export default {
   name: "ListMeeting",
   components: { Navbar },
 
   setup() {
+    const router = useRouter();
+
     const state = reactive({
       showModal: false,
+      currentRoute: router.currentRoute,
     });
 
     function handleDetailClick() {
@@ -89,10 +95,15 @@ export default {
       state.showModal = false;
     }
 
+    const isWebinar = state.currentRoute.fullPath.includes("/webinar");
+    const isMeeting = state.currentRoute.fullPath.includes("/conference");
+
     return {
       state,
       handleDetailClick,
       handleCloseClick,
+      isMeeting,
+      isWebinar,
     };
   },
 };

@@ -53,10 +53,10 @@
 
       <input type="checkbox" id="terms" name="terms" value="terms" />
       <label for="passphrase"> Passphrase </label> <br />
-      <router-link to="/conference/list">
+      <router-link to="/webinar/list">
         <button style="width: 70%" type="submit">Create Webinar</button>
       </router-link>
-      <router-link to="/conference/list">
+      <router-link to="/webinar/list">
         <button
           style="width: 25%; float: right"
           class="cancelbtn"
